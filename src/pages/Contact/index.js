@@ -6,8 +6,7 @@ import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
 import { faPhoneFlip } from '@fortawesome/free-solid-svg-icons';
 import emailjs from '@emailjs/browser';
 
-import { sendEmail } from '../../config/emailJS'; // Import emailJSConfig instead of sendEmail
-
+import { sendEmail } from '../../config/emailJS'; 
 import { log } from '../../utils/logger';
 
 import './style.css';

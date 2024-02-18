@@ -6,7 +6,7 @@ import 'holderjs'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-import Book from '../../components/Book'
+import Book from '../../components/BookList'
 
 import { log } from '../../utils/logger'
 
@@ -38,7 +38,7 @@ const Library = () => {
 
   useEffect(() => {
     fetchBooks();
-  }, []);
+  }, [fetchBooks]);
 
   log('[Library] books - ', books)
 

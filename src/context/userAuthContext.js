@@ -14,7 +14,7 @@ import { auth } from "../utils/firebase";
 
 import { createUserDocument } from '../utils/firestore'
 
-import { log } from '../utils/logger'
+import { log  } from '../utils/logger'
 
 const loggedOutUser = { user:null, loggedIn: false }
 // create Context.API object for this user authentication object

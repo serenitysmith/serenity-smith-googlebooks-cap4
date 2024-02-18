@@ -31,7 +31,7 @@ const App = () => {
               <Route exact path="/" element={<Home />} /> {/* Login */}
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-              <Route path="/home" element={<Home />} /> {/* replace with library */}
+              <Route path="/home" element={<Home />} /> 
               <Route element={<ProtectedRoute redirectPath='/login'/>}>
                 <Route path="/library" element={<Library/>} />
                 <Route path="/search" element={<Search/>} />
