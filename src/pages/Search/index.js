@@ -12,16 +12,24 @@ import './style.css'
 
 const Search = (props) => {
 
-    const APIKey = process.env.REACT_APP_GOOGLE_BOOKS_API_KEY;
+    // const APIKey = process.env.REACT_APP_GOOGLE_BOOKS_API_KEY;
 
     const [url, setUrl] = useState()
 
     const { data: books, isPending, error } = useFetch(url) // the useEffect in the useFetch updates the hook when the url changes
 
-    const updateSearch = e => {
-        log('updateSearch', e);
-        setUrl(`https://www.googleapis.com/books/v1/volumes?q=${e.fullSearch}&maxResults=40&key=${APIKey}`)
-    }
+    // const updateSearch = e => {
+    //     log('updateSearch', e);
+    //     setUrl(`https://www.googleapis.com/books/v1/volumes?q}`)
+    // }
+
+    const updateSearch = async (book) => {
+        const response = await fetch(
+          `https://www.googleapis.com/books/v1/volumes?q=${book}`
+        );
+        const data = await response.json();
+        return data;
+      };
 
     log('Books : ', books)
 

@@ -12,9 +12,7 @@ const ProtectedRoute = ({ children, redirectPath = '/login' }) => {
 
     log('ProtectedRoute', user, children, redirectPath, location)
 
-    // if (user === undefined) {
-    //     return null; // or loading spinner
-    // }
+    
 
     log("Check if user is accessing private route - ", user)
     if (!user.loggedIn) {
