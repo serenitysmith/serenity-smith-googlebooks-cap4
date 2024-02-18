@@ -1,0 +1,8 @@
+{
+    "globals": {
+      "getApps": "readonly",
+      "initializeApp": "readonly",
+      "getAnalytics": "readonly"
+    }
+    
+  }
