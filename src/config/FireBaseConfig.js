@@ -3,7 +3,7 @@ const admin = require("firebase-admin");
 
 const serviceAccount = require("https://accounts.google.com/o/oauth2/auth?client_id=577859285076-1v 2");
 
-
+// firebase deploy --token "$FIREBASE_TOKEN"
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   
@@ -11,7 +11,7 @@ admin.initializeApp({
 
 import { getRemoteConfig } from "firebase/remote-config";
 const remoteConfig = getRemoteConfig(app);
-
+gtag('config', 'G-12345ABCDE', { 'debug_mode':true });
 const firebaseConfig = {
   apiKey: "AIzaSyC_2Jv_BZrhnOeTJM7RsVVo3dl6kKkSo_I",
   authDomain: "booktokapi.firebaseapp.com",

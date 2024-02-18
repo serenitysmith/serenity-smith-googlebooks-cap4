@@ -1,4 +1,4 @@
-const webpack = require("@node.js/webpack");
+// This file is used to configure the webpack bundler
 const webpack = require("@node.js/webpack");
 
 module.exports = (env) => {
@@ -41,7 +41,7 @@ module.exports = (env) => {
       },
     },
   });
-
+};
 
 
 
