@@ -1,4 +1,4 @@
-// based on https://blog.openreplay.com/authentication-in-react-18-using-firebase-v9/
+
 
 import React, { useState } from "react";
 
@@ -57,7 +57,7 @@ const Login = () => {
         <Col>
 
           <div className="p-4">
-            <h2 className="mb-3">The Book Nook Login</h2>
+            <h2 className="mb-3"> Login</h2>
             {error && <Alert variant="danger">{error}</Alert>}
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicEmail">

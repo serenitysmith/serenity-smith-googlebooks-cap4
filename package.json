@@ -8,12 +8,9 @@
     "url": ""
   },
   "author": "Serenity",
-  
-  "bugs": {
-    
-  },
+  "bugs": {},
   "dependencies": {
-    "@emailjs/browser": "^3.10.0",
+    "@emailjs/browser": "^3.12.1",
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-brands-svg-icons": "^6.3.0",
     "@fortawesome/free-regular-svg-icons": "^6.3.0",
@@ -23,6 +20,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.3",
+    "emailjs-com": "^3.2.0",
     "firebase": "^9.17.1",
     "framer-motion": "^9.0.4",
     "holderjs": "^2.9.9",

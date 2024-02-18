@@ -45,9 +45,9 @@ const Library = () => {
   return (
     <div className="App-library">
       <div >
-        <h1>Your Book Nook</h1>
+        <h1>BookTok</h1>
         <p className="firstLibraryText">Want to know what books your already own at home? Or find the books you want to add to your collection?<br />
-          Your Book Nook easily allows you to view the books you have; those you desire and those that you have read.</p>
+          Your BookTok library easily allows you to view the books you have; those you desire and those that you have read.</p>
         <div className="App-library-book-list">
           <Row xs={1} md={4} className="g-0">
             {books && books.items.map((item, index) => {

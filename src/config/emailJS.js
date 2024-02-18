@@ -1,9 +1,20 @@
-import { log } from '../utils/logger'
+import emailjs from 'emailjs-com'; // Correct import statement
 
-export const emailJSConfig = {
- serviceId: process.env.REACT_APP_EMAILJS_SERVICE_ID,
-  templateId: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-  publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-}
+const sendEmail = () => {
+  return new Promise((resolve, reject) => {
+    emailjs.send('service_k5cgwgr', 'template_56yv0s9', '#myForm')
+      .then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          resolve(response); // resolve the promise with the response
+        },
+        (error) => {
+          console.log('FAILED...', error);
+          reject(error); // reject the promise with the error
+        }
+      );
+  });
+};
 
-log(emailJSConfig)
+export default sendEmail; // Exporting the sendEmail function as the default export
+

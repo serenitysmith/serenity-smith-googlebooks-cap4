@@ -1,26 +1,23 @@
-import React, { useRef } from 'react'
+import React, { useRef } from 'react';
 import { Form, Row } from "react-bootstrap";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
-import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
-import { faPhoneFlip } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
+import { faPhoneFlip } from '@fortawesome/free-solid-svg-icons';
 import emailjs from '@emailjs/browser';
 
-import { emailJSConfig } from '../../config/emailJS'
+import { sendEmail } from '../../config/emailJS'; // Import emailJSConfig instead of sendEmail
 
-import { log } from '../../utils/logger'
+import { log } from '../../utils/logger';
 
-import './style.css'
-//Email JS is used below to allow users to send their messages if needed
+import './style.css';
+
 const ContactPage = () => {
   const form = useRef();
 
-  // implement a Bootstrap alert with a state variable
-  //  ( result ? <Alert key="email-alert" variant="success">Message sent!</Alert> : <Alert key="email-alert" variant="danger">Message failed, try again!</Alert>)
-
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm(emailJSConfig.serviceId, emailJSConfig.templateId, form.current, emailJSConfig.publicKey)
+    emailjs.sendForm(sendEmail.serviceId, sendEmail.templateId, form.current, sendEmail.publicKey)
       .then((result) => {
         log(result.text);
         // alert("message sent !")
@@ -29,10 +26,9 @@ const ContactPage = () => {
         // alert("message failed try again !")
       });
     form.current.reset();
-  }
+  };
 
   const rowwidth = { width: '100%', maxWidth: '450px' };
-  // Contact us form for users, linked to Email JS
   return (
     <div>
       <h1 className='py-3'>We'd love to hear from you</h1>

@@ -7,7 +7,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 import AppLogin from '../AppLogin'
 import AppWelcome from '../AppWelcome'
 
-import Logo from "../../assets/logos/BookStoreLogo.png"
+import BookTok from "../../assets/images/BookTok2.png"
 
 import "./style.css"
 
@@ -19,7 +19,7 @@ const AppNavbar = () => {
         <Container fluid>
           <LinkContainer to="/">
             <Navbar.Brand>
-              <img className="App-navbar-brand" src={Logo} alt="Brand logo" />
+              <img className="App-navbar-brand" src={BookTok} alt="bt" />
             </Navbar.Brand>
           </LinkContainer>
           <div className="me-auto">
@@ -29,7 +29,7 @@ const AppNavbar = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="App-navbar-links ms-auto">
               <LinkContainer to="/library">
-                <Nav.Link className='App-navbar-txt'>Your Book Nook</Nav.Link>
+                <Nav.Link className='App-navbar-txt'>Your BookTok Corner</Nav.Link>
               </LinkContainer>
               <LinkContainer to="/search">
                 <Nav.Link className='App-navbar-txt' >Search</Nav.Link>
