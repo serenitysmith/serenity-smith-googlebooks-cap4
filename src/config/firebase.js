@@ -31,23 +31,27 @@ const options = {
   role: storage.acl.READER_ROLE
 };
 
-myBucket.acl.add(options, function(err, aclObject) {});
+
+
+//-
+// Make a bucket's contents publicly readable.
+//-
+storage.bucket('https://console.firebase.google.com/project/booktokapi/storage/booktokapi.appspot.com/files').acl.add(options, function(err, aclObject) {});
 
 //-
 // If the callback is omitted, we'll return a Promise.
 //-
-myBucket.acl.add(options).then(function(data) {
+storage.bucket('https://console.firebase.google.com/project/booktokapi/storage/booktokapi.appspot.com/files').acl.add(options).then(function(data) {
   const aclObject = data[0];
   const apiResponse = data[1];
 });
 
 
-
+const { initializeApp } = require('firebase-admin/app');
 
 
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app)
 const db = getFirestore(app);
