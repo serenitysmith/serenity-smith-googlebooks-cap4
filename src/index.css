@@ -15,20 +15,15 @@
 
 :root {
   /* vars here */
-  --app-background: #fff;
+  --app-background: #dcc1c1;
   --app-border: 1px solid #dfdfdf;
   --header-background: #282c34;
   --footer-background: #b6ccdb;
   --bkg-banner: #b6ccdb;
-  --book-icon: #b6ccdb;
-  --button-color:#b6ccdb;
-  --book-icon-indicator: rgb(245, 233, 128);
-  --search-btn: #336B75;
-  --add-bnt: #B6A490;
-  --bkg-sections: #a19c9c;
-  --text-color: #312b2b;
-  --body-background: #ddd;
-  --book-card-background: #ccc;
+ 
+  --text-color: #8d3f3f;
+  --body-background: #9c8787;
+  
   --footer-icon-color: #212529;
   --lh: 1.4rem;
 }
@@ -46,12 +41,11 @@ html {
 }
 
 body {
-  font-family: 'Karla', 'Roboto', 'Ubuntu',
-    sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: bold;
-color: #da9191;
+color: #483636;
   display: flex;
   justify-content: center;
   align-content: center;

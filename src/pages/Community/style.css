@@ -2,3 +2,21 @@
 
 opacity: 0.9;   
 }
+.main-community-container {
+
+ 
+    background-size: 6%;
+    background-image: url('../../assets/images/chat.png')
+    
+
+    
+  }
+
+
+
+.main-community-container {
+  width: 220%;
+  height: 220%;
+ opacity: 0.8;
+  background-image: url('../../assets/images/chat.png')
+}
