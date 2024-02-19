@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import "./style.css";
 
 function Community() {
   const [messages, setMessages] = useState([]);
@@ -52,27 +53,29 @@ function Community() {
       <Row className="message-container">
         {messages.map((message, index) => (
           <Col key={index} xs={12} md={6} lg={4}>
-            <Card className="chat-card">
+            <Card className="chat-card" style={{ fontFamily: 'Pacifico' }}>
               <Card.Body>
                 <Card.Text className="message-text">{message.text}</Card.Text>
                 <Card.Text className="posted-date">
                   Posted on {message.date.toLocaleString()}
                 </Card.Text>
 
-                <Button
-                  variant="outline-secondary"
-                  onClick={() => handleEditMessage(index)}
-                  className="button"
-                >
-                  Edit
-                </Button>
-                <Button
-                  variant="outline-danger"
-                  onClick={() => handleDeleteMessage(index)}
-                  className="button"
-                >
-                  Delete
-                </Button>
+                <div className="button-container">
+                  <Button
+                    variant="outline-secondary"
+                    onClick={() => handleEditMessage(index)}
+                    className="button"
+                  >
+                    Edit
+                  </Button>
+                  <Button
+                    variant="outline-danger"
+                    onClick={() => handleDeleteMessage(index)}
+                    className="button"
+                  >
+                    Delete
+                  </Button>
+                </div>
 
                 {message.replies.map((reply, replyIndex) => (
                   <div key={replyIndex} className="reply-container">
@@ -111,7 +114,7 @@ function Community() {
           placeholder="Type your message..."
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
-          className="input-container smaller-input" // Adjusted class
+          className="input-container smaller-input"
         />
         <Button
           variant="info"
@@ -126,3 +129,4 @@ function Community() {
 }
 
 export default Community;
+
