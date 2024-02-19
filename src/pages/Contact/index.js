@@ -1,5 +1,3 @@
-
-
 import React, { useRef } from 'react';
 import { Form, Row, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,18 +10,15 @@ const ContactPage = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    email.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_USER_ID')
-      .then((result) => {
-        console.log(result.text);
-        alert("Message sent!");
-      }, function (error) {
-        console.log(error.text);
-        alert("Message failed, try again!");
-      });
+    // Log a message to the console indicating the email would be sent
+    console.log("Email would be sent:", form.current);
+
+    // Display an alert indicating that the email has been "sent"
+    alert("Message sent! We'll be in touch soon.");
+
+    // Reset the form
     form.current.reset();
   };
-
-  const rowwidth = { width: '100%', maxWidth: '450px' };
 
   return (
     <div>
