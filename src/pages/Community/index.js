@@ -1,4 +1,6 @@
+
 import React, { useState } from "react";
+import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 
 function Community() {
   const [messages, setMessages] = useState([]);
@@ -7,39 +9,34 @@ function Community() {
 
   const handleSendMessage = () => {
     if (editIndex !== null) {
-      // If editing, update the existing message
       const updatedMessages = [...messages];
       updatedMessages[editIndex].text = newMessage;
       setMessages(updatedMessages);
-      setEditIndex(null); // Clear the edit state
+      setEditIndex(null);
     } else {
-      // If not editing, add a new message
       setMessages([
         ...messages,
         { text: newMessage, date: new Date(), replies: [] },
       ]);
     }
 
-    // Clear the input field
+    // Clear the input field directly after updating the state
     setNewMessage("");
   };
 
   const handleEditMessage = (index) => {
-    // Set the editing state and populate the input field
     setEditIndex(index);
     setNewMessage(messages[index].text);
   };
 
   const handleDeleteMessage = (index) => {
-    // Delete the message at the specified index
     const updatedMessages = [...messages];
     updatedMessages.splice(index, 1);
     setMessages(updatedMessages);
-    setEditIndex(null); // Clear the edit state
+    setEditIndex(null);
   };
 
   const handleReply = (index, replyText) => {
-    // Add a reply to the message at the specified index
     const updatedMessages = [...messages];
     updatedMessages[index].replies.push({
       text: replyText,
@@ -49,67 +46,82 @@ function Community() {
   };
 
   return (
-    <div className="main-comunity-div">
+    <Container className="main-community-container">
       <h1 className="com">Community</h1>
-     
-      {/* Display community discussions */}
-      <div className="message-container">
+
+      <Row className="message-container">
         {messages.map((message, index) => (
-          <div key={index}>
-            <div className="message-text">{message.text}</div>
-            <div className="posted-date">{`Posted on ${message.date.toLocaleString()}`}</div>
+          <Col key={index} xs={12} md={6} lg={4}>
+            <Card className="chat-card">
+              <Card.Body>
+                <Card.Text className="message-text">{message.text}</Card.Text>
+                <Card.Text className="posted-date">
+                  Posted on {message.date.toLocaleString()}
+                </Card.Text>
 
-            {/* Edit and Delete buttons */}
-            <button onClick={() => handleEditMessage(index)} className="button">
-              Edit
-            </button>
-            <button
-              onClick={() => handleDeleteMessage(index)}
-              className="button"
-            >
-              Delete
-            </button>
+                <Button
+                  variant="outline-secondary"
+                  onClick={() => handleEditMessage(index)}
+                  className="button"
+                >
+                  Edit
+                </Button>
+                <Button
+                  variant="outline-danger"
+                  onClick={() => handleDeleteMessage(index)}
+                  className="button"
+                >
+                  Delete
+                </Button>
 
-            {/* Display replies */}
-            {message.replies.map((reply, replyIndex) => (
-              <div key={replyIndex}>
-                <div>{`Reply: ${reply.text}`}</div>
-                <div>{`Posted on ${reply.date.toLocaleString()}`}</div>
-              </div>
-            ))}
+                {message.replies.map((reply, replyIndex) => (
+                  <div key={replyIndex} className="reply-container">
+                    <div className="reply-text">{`Reply: ${reply.text}`}</div>
+                    <div className="posted-date">
+                      {`Posted on ${reply.date.toLocaleString()}`}
+                    </div>
+                  </div>
+                ))}
 
-            {/* Reply input and message  field */}
-            <div >
-              <input
-                className="  input-reply "
-                type="text"
-                placeholder="Reply..."
-                onChange={(e) => setNewMessage(e.target.value)}
-              />
-              <button
-                onClick={() => handleReply(index, newMessage)}
-                className="button"
-              >
-                Reply
-              </button>
-            </div>
-          </div>
+                <div className="reply-input-container">
+                  <Form.Control
+                    type="text"
+                    placeholder="Reply..."
+                    value={newMessage}
+                    onChange={(e) => setNewMessage(e.target.value)}
+                    className="input-reply"
+                  />
+                  <Button
+                    variant="outline-success"
+                    onClick={() => handleReply(index, newMessage)}
+                    className="button"
+                  >
+                    Reply
+                  </Button>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
-      </div>
+      </Row>
 
-      {/* Input field for new messages */}
-      <div>
-        <input
-          className="input-container"
+      <div className="new-message-container">
+        <Form.Control
           type="text"
+          placeholder="Type your message..."
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
+          className="input-container smaller-input" // Adjusted class
         />
-        <button onClick={handleSendMessage} className="button">
+        <Button
+          variant="info"
+          onClick={handleSendMessage}
+          className="button"
+        >
           {editIndex !== null ? "Update" : "Send"}
-        </button>
+        </Button>
       </div>
-    </div>
+    </Container>
   );
 }
 
