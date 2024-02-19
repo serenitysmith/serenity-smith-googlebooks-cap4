@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Form, Row, Button } from "react-bootstrap";
+import { Form, Row, Col, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faEnvelopeOpenText, faPhoneFlip } from '@fortawesome/free-solid-svg-icons';
 
@@ -21,33 +21,42 @@ const ContactPage = () => {
   };
 
   return (
-    <div>
+    <div className='contact'>
       <h1 className='py-3'>We'd love to hear from you</h1>
       <div className="container mt-5">
-        <div className="Row">
-          <Form className="ContactForm" ref={form}>
-            {/* Your form fields go here */}
-            <Form.Group as={Row} controlId="formLocation">
-              <FontAwesomeIcon icon={faLocationDot} />
-              <Form.Control type="text" placeholder="Your Location" />
-            </Form.Group>
-            <Form.Group as={Row} controlId="formEmail">
-              <FontAwesomeIcon icon={faEnvelopeOpenText} />
-              <Form.Control type="email" placeholder="Your Email" />
-            </Form.Group>
-            <Form.Group as={Row} controlId="formPhone">
-              <FontAwesomeIcon icon={faPhoneFlip} />
-              <Form.Control type="tel" placeholder="Your Phone Number" />
-            </Form.Group>
+        <Row className="justify-content-md-center">
+          <Col xs={12} md={8} lg={6}>
+            <Form className="ContactForm" ref={form}>
+              {/* Your form fields go here */}
+              <Form.Group controlId="formLocation">
+                <Form.Label>
+                  <FontAwesomeIcon icon={faLocationDot} /> Your Location
+                </Form.Label>
+                <Form.Control type="text" placeholder="Enter your location" />
+              </Form.Group>
+              <Form.Group controlId="formEmail">
+                <Form.Label>
+                  <FontAwesomeIcon icon={faEnvelopeOpenText} /> Your Email
+                </Form.Label>
+                <Form.Control type="email" placeholder="Enter your email" />
+              </Form.Group>
+              <Form.Group controlId="formPhone">
+                <Form.Label>
+                  <FontAwesomeIcon icon={faPhoneFlip} /> Your Phone Number
+                </Form.Label>
+                <Form.Control type="tel" placeholder="Enter your phone number" />
+              </Form.Group>
 
-            <Button variant="primary" type="submit" onClick={sendEmail}>
-              Send Message
-            </Button>
-          </Form>
-        </div>
+              <Button variant="primary" type="submit" onClick={sendEmail}>
+                Send Message
+              </Button>
+            </Form>
+          </Col>
+        </Row>
       </div>
     </div>
   );
 };
 
 export default ContactPage;
+

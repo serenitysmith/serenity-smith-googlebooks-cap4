@@ -1,17 +1,17 @@
 .ContactForm {
-  display: flex;
+ 
   align-items: center;
   justify-items: left;
   justify-content: flex-end;
-  border: 1px solid rgb(239, 229, 229);
-  border-radius: 10px;
-  padding: 20px;
-  background-color: #da90d4;
+  border: 3px solid rgb(239, 229, 229);
+  border-radius: 70px;
+  padding: 90px;
+  background-color: #a60398;
   
-  background-size: 33%;
+  background-size: 53%;
   background-repeat: no-repeat;
 }
-
+.contact {background-image: url('../../assets/images/email.png');}
 .contactInfo {
   background-color: #500938 !important;
   color: white;
