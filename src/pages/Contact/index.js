@@ -1,9 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faEnvelopeOpenText, faPhoneFlip } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLocationDot,
+  faEnvelopeOpenText,
+  faPhoneFlip,
+} from "@fortawesome/free-solid-svg-icons";
 
-import './style.css';
+import "./style.css";
 
 const ContactPage = () => {
   const form = useRef();
@@ -21,8 +25,8 @@ const ContactPage = () => {
   };
 
   return (
-    <div className='contact'>
-      <h1 className='py-3'>We'd love to hear from you</h1>
+    <div className="contact">
+      <h1 className="py-3">We'd love to hear from you</h1>
       <div className="container mt-5">
         <Row className="justify-content-md-center">
           <Col xs={12} md={8} lg={6}>
@@ -44,7 +48,10 @@ const ContactPage = () => {
                 <Form.Label>
                   <FontAwesomeIcon icon={faPhoneFlip} /> Your Phone Number
                 </Form.Label>
-                <Form.Control type="tel" placeholder="Enter your phone number" />
+                <Form.Control
+                  type="tel"
+                  placeholder="Enter your phone number"
+                />
               </Form.Group>
 
               <Button variant="primary" type="submit" onClick={sendEmail}>
@@ -59,4 +66,3 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
-

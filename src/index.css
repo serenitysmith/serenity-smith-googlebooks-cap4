@@ -18,10 +18,10 @@
   --app-background: #fff;
   --app-border: 1px solid #dfdfdf;
   --header-background: #282c34;
-  --footer-background: #b8e4ff;
-  --bkg-banner: #b8e4ff;
-  --book-icon: #b8e4ff;
-  --button-color:#b8e4ff;
+  --footer-background: #b6ccdb;
+  --bkg-banner: #b6ccdb;
+  --book-icon: #b6ccdb;
+  --button-color:#b6ccdb;
   --book-icon-indicator: rgb(245, 233, 128);
   --search-btn: #336B75;
   --add-bnt: #B6A490;
@@ -51,7 +51,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: bold;
-
+color: #da9191;
   display: flex;
   justify-content: center;
   align-content: center;

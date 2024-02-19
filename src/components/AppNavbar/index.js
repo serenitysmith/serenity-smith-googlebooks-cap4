@@ -17,7 +17,7 @@ const AppNavbar = () => {
        
           <LinkContainer to="/">
             <Navbar.Brand>
-              <img className="App-navbar-brand" src={BookTok} alt="bt" />
+              <img className="App-navbar-brand" src={BookTok} alt="bt"  />Home
             </Navbar.Brand>
           </LinkContainer>
           <div className="me-auto">
