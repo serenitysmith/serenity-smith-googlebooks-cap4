@@ -11,6 +11,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import Main from './containers/Main'
 
 // Pages
+import Community from './pages/Community/community'
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
@@ -32,6 +33,7 @@ const App = () => {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/home" element={<Home />} /> 
+              <Route path="/community" element={<Community />} />
               <Route element={<ProtectedRoute redirectPath='/login'/>}>
                 <Route path="/library" element={<Library/>} />
                 <Route path="/search" element={<Search/>} />

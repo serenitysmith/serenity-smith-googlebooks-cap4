@@ -1,18 +1,17 @@
-import React from 'react'
+import React from "react";
 
-import { Navbar, Nav, Container } from "react-bootstrap"
+import { Navbar, Nav, Container } from "react-bootstrap";
 
-import { LinkContainer } from 'react-router-bootstrap'
+import { LinkContainer } from "react-router-bootstrap";
 
-import AppLogin from '../AppLogin'
-import AppWelcome from '../AppWelcome'
+import AppLogin from "../AppLogin";
+import AppWelcome from "../AppWelcome";
 
-import BookTok from "../../assets/images/BookTok2.png"
+import BookTok from "../../assets/images/BookTok2.png";
 
-import "./style.css"
+import "./style.css";
 
 const AppNavbar = () => {
-
   return (
     <div>
       <Navbar className="App-navbar" expand="lg" sticky="top" id="navbar">
@@ -29,13 +28,21 @@ const AppNavbar = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="App-navbar-links ms-auto">
               <LinkContainer to="/library">
-                <Nav.Link className='App-navbar-txt'>Your BookTok Corner</Nav.Link>
+                <Nav.Link className="App-navbar-txt">
+                  Your BookTok Corner
+                </Nav.Link>
               </LinkContainer>
-              <LinkContainer to="/search">
-                <Nav.Link className='App-navbar-txt' >Search</Nav.Link>
+
+              <LinkContainer to="/community">
+                <Nav.Link className="App-navbar-txt">
+                  Chat with the Community
+                </Nav.Link>
+              </LinkContainer>
+<LinkContainer to="/search">
+                <Nav.Link className="App-navbar-txt">Search</Nav.Link>
               </LinkContainer>
               <LinkContainer to="/contact">
-                <Nav.Link className='App-navbar-txt' >Contact us</Nav.Link>
+                <Nav.Link className="App-navbar-txt">Contact us</Nav.Link>
               </LinkContainer>
               <AppLogin />
             </Nav>
@@ -43,7 +50,7 @@ const AppNavbar = () => {
         </Container>
       </Navbar>
     </div>
-  )
-}
+  );
+};
 
-export default AppNavbar
+export default AppNavbar;
