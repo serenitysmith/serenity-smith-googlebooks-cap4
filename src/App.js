@@ -1,11 +1,10 @@
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 // Components
 import AppHeader from './components/AppHeader';
 import AppFooter from './components/AppFooter';
-
-// Containers
-import Main from "./containers/Main";
+import Main from './containers/Main'; // Import the Main component
 
 // Pages
 import Community from "./pages/Community";
@@ -22,7 +21,7 @@ const App = () => {
   return (
     <div className="App">
       <AppHeader className="App-header" />
-      <Main className="App-main">
+      <Main className="App-main"> {/* Add Main component here */}
         <Routes>
           <Route exact path="/" element={<Home />} /> {/* Login */}
           <Route path="/dashboard" element={<DashBoard />} />
@@ -33,6 +32,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Main>
+      <AppFooter className="App-footer" />
     </div>
   );
 };
