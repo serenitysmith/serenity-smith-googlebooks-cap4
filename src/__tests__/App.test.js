@@ -7,6 +7,6 @@ test('full app rendering', async () => {
   render(<App />);
 
   // verify page content
-  expect(screen.getByText(/booktokapi/i)).toBeInTheDocument();
+  expect(screen.getByText(/booktok/i)).toBeInTheDocument();
 
 });
