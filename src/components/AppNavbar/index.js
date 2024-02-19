@@ -14,7 +14,7 @@ const AppNavbar = () => {
   return (
     <div>
       <Navbar className="App-navbar" expand="lg" sticky="top" id="navbar">
-        <Container fluid>
+       
           <LinkContainer to="/">
             <Navbar.Brand>
               <img className="App-navbar-brand" src={BookTok} alt="bt" />
@@ -53,7 +53,7 @@ const AppNavbar = () => {
              
             </Nav>
           </Navbar.Collapse>
-        </Container>
+        
       </Navbar>
     </div>
   );
