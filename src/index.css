@@ -42,10 +42,10 @@ html {
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing:var(bolder);
   -moz-osx-font-smoothing: grayscale;
   font-weight: bold;
-color: #483636;
+color: #4a3838;
   display: flex;
   justify-content: center;
   align-content: center;

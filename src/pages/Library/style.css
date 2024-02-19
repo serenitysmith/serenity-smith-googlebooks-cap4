@@ -31,9 +31,9 @@
     .firstLibraryText {
         margin: 5px 200px;
         padding: 20px;
-        font-family: papyrus;
-        color: rgb(52, 38, 38);
-        background-color: aliceblue;
+        font-family: 'Karla', ;
+        color: rgb(90, 59, 24);
+        background-color: rgb(247, 235, 130);
         border-radius: 50px;
         opacity: 0.8;
         font-weight: 10000;
