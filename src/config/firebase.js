@@ -1,11 +1,8 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore, collection, query, where, getDocs } from "firebase/firestore";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyC_2Jv_BZrhnOeTJM7RsVVo3dl6kKkSo_I",
   authDomain: "booktokapi.firebaseapp.com",
@@ -19,6 +16,26 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
+// Listen to the authentication state changes
+onAuthStateChanged(auth, user => {
+  if (user) {
+    console.log("User is signed in:", user.uid);
+  } else {
+    console.log("User is signed out");
+  }
+});
 
-export {app, analytics, firebaseConfig}
+// Example Firestore query
+const q = query(collection(db, "users"), where("age", ">", 18));
+
+// Execute the query
+const querySnapshot = await getDocs(q);
+querySnapshot.forEach((doc) => {
+  console.log(doc.id, " => ", doc.data());
+});
+
+export { app, analytics, auth, db, firebaseConfig };
+
