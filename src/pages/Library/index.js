@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { collection, getDocs }  from 'firebase/firestore'
-import { db } from '../../utils/firestore'
-import { useUserAuth } from "../../context/userAuthContext"
+
+
 import 'holderjs'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-import Book from '../../components/BookList'
+
 
 import { log } from '../../utils/logger'
 
@@ -16,8 +15,7 @@ const Library = () => {
 
   const [books, setBooks] = useState()
 
-  const { user } = useUserAuth()
-  const { user: { uid } } = user;
+
 
   const fetchBooks = async () => {
     log('[Library] fetchBooks')

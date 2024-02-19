@@ -4,8 +4,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 
 import { LinkContainer } from "react-router-bootstrap";
 
-import AppLogin from "../AppLogin";
-import AppWelcome from "../AppWelcome";
+
 
 import BookTok from "../../assets/images/BookTok2.png";
 
@@ -22,7 +21,7 @@ const AppNavbar = () => {
             </Navbar.Brand>
           </LinkContainer>
           <div className="me-auto">
-            <AppWelcome />
+         
           </div>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -38,13 +37,20 @@ const AppNavbar = () => {
                   Chat with the Community
                 </Nav.Link>
               </LinkContainer>
+
 <LinkContainer to="/search">
                 <Nav.Link className="App-navbar-txt">Search</Nav.Link>
               </LinkContainer>
+
+              <LinkContainer to="/dashboard">
+                <Nav.Link className="App-navbar-txt"> Your Profile</Nav.Link>
+              </LinkContainer>
+
+
               <LinkContainer to="/contact">
                 <Nav.Link className="App-navbar-txt">Contact us</Nav.Link>
               </LinkContainer>
-              <AppLogin />
+             
             </Nav>
           </Navbar.Collapse>
         </Container>

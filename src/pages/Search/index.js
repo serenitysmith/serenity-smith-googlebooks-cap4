@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import BookList from '../../components/BookList'; // Make sure to update the import path
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -21,7 +20,14 @@ const Search = () => {
         setBooks([<div className='prompt'>ツ No results, try a different term!</div>]);
       } else {
         setBooks(data.items.map((item, index) => (
-          <BookList key={index} item={item} />
+          
+          <div key={index} className='book'>
+            <img src={item.volumeInfo.imageLinks?.thumbnail} alt={item.volumeInfo.title} />
+            <h3>{item.volumeInfo.title}</h3>
+            <p>{item.volumeInfo.authors}</p>
+            <p>{item.volumeInfo.publishedDate}</p>
+            <p>{item.volumeInfo.description}</p>
+          </div>
         )));
       }
     } else {
