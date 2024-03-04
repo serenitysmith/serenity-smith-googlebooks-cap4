@@ -28,7 +28,7 @@ const Search = () => {
       } else {
         // Set the list of books based on the fetched data
         setBooks(data.items.map((item, index) => (
-          <Col key={index} xs={12} sm={6} md={4} lg={3}>
+          <Col key={index} xs={24} sm={20} md={7} lg={2}>
             {/* Card component for displaying each book */}
             <Card className='book-item'>
               {/* Image for the book cover */}

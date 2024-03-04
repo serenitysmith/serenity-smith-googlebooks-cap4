@@ -1,6 +1,8 @@
 // Importing necessary modules and styles
 import React, { useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faTrash, faReply } from "@fortawesome/free-solid-svg-icons";
 import "./style.css";
 
 // Defining the functional component Community
@@ -57,12 +59,14 @@ function Community() {
   // JSX structure for rendering the component
   return (
     <Container className="main-community-container">
-      <h1 className="com">Community</h1>
+      <h1 className="com" style={{ color: '#F7B2F4' }}>
+        Community
+      </h1>
 
       <Row className="message-container">
         {/* Mapping through messages to display each one */}
         {messages.map((message, index) => (
-          <Col key={index} xs={12} md={6} lg={4}>
+          <Col key={index} xs={12} sm={6} lg={4}>
             {/* Card component for displaying individual messages */}
             <Card className="chat-card" style={{ fontFamily: 'Pacifico' }}>
               <Card.Body>
@@ -78,14 +82,14 @@ function Community() {
                     onClick={() => handleEditMessage(index)}
                     className="button"
                   >
-                    Edit
+                    <FontAwesomeIcon icon={"falike"} /> Edit
                   </Button>
                   <Button
                     variant="outline-danger"
                     onClick={() => handleDeleteMessage(index)}
                     className="button"
                   >
-                    Delete
+                    <FontAwesomeIcon icon={faTrash} /> Delete
                   </Button>
                 </div>
 
@@ -109,11 +113,11 @@ function Community() {
                     className="input-reply"
                   />
                   <Button
-                    variant="outline-success"
+                    variant="success"
                     onClick={() => handleReply(index, newMessage)}
                     className="button"
                   >
-                    Reply
+                    <FontAwesomeIcon icon={faReply} /> Reply
                   </Button>
                 </div>
               </Card.Body>
@@ -129,13 +133,12 @@ function Community() {
           placeholder="Type your message..."
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
-          className="input-container smaller-input"
+          
         />
         <Button
-          variant="info"
+          variant="warning"  
           onClick={handleSendMessage}
-          className="button"
-        >
+          className="button"        >
           {editIndex !== null ? "Update" : "Send"}
         </Button>
       </div>

@@ -1,16 +1,4 @@
-.main-community-container {background-image: url('../../assets/images/chat.png');
 
-opacity: 0.9;   
-}
-.main-community-container {
-
- 
-    background-size: 6%;
-    background-image: url('../../assets/images/chat.png')
-    
-
-    
-  }
 
 
 
@@ -19,4 +7,7 @@ opacity: 0.9;
   height: 220%;
  opacity: 0.8;
   background-image: url('../../assets/images/chat.png')
+}
+.com{background-color: rgb(28, 83, 83);
+border-radius: 40%;
 }
